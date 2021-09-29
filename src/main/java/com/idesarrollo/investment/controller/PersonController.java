@@ -1,23 +1,41 @@
 package com.idesarrollo.investment.controller;
 
 import com.idesarrollo.investment.model.Person;
+import com.idesarrollo.investment.service.PersonService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController("/api/v1")
 public class PersonController {
 
+    //Lo defino como una variable global.
+    //PersonService pService = new PersonService();
+    //@ son beans.
+    //Instanciar el objeto pService, Es lo mismo que la fila de arriba
+    @Autowired
+    PersonService pService;
+
+
     //@RequestMapping(value = "/person/{id}", method = RequestMethod.GET)
-    @GetMapping("/person/{id}")
-    public String getPerson(@PathVariable Long id){
+    @GetMapping("/person/{dni}")
+    public String getPersonByDni(@PathVariable("dni") String dni){
 
-        Person persona1 = new Person();
-        persona1.setId(id);
-        persona1.setName("pepe");
-        persona1.setAddress("calle falsa 123");
-        persona1.setCuil("323423423523");
+        Person persona = pService.findPerson(dni);
 
-        return "persona: " + persona1.toString();
+        return "persona: ";
     }
+
+
+
+    @GetMapping("/person/name/{name}")
+    public String getPersonByName(@PathVariable("name") String name){
+
+        Person persona = pService.findPerson(name);
+
+        return "persona: ";
+    }
+
+
 
 }
 
