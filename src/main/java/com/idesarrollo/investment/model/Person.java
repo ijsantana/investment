@@ -1,11 +1,24 @@
 package com.idesarrollo.investment.model;
 
+
+
+import com.sun.istack.NotNull;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table
 public class Person {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotNull
     private String name;
+    @NotNull
+    @Column(name = "documento")
     private String dni;
     private String cuil;
     private String address;
