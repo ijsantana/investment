@@ -5,6 +5,8 @@ import com.idesarrollo.investment.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController("/api/v1")
 public class PersonController {
 
@@ -18,11 +20,10 @@ public class PersonController {
 
     //@RequestMapping(value = "/person/{id}", method = RequestMethod.GET)
     @GetMapping("/person/{dni}")
-    public String getPersonByDni(@PathVariable("dni") String dni){
-
+    public Person getPersonByDni(@PathVariable("dni") String dni){
         Person persona = pService.findPerson(dni);
 
-        return "persona: ";
+        return persona;
     }
 
 
@@ -34,6 +35,15 @@ public class PersonController {
 
         return "persona: ";
     }
+
+    @PostMapping("/person/new")
+    public String saveNewPerson(@RequestBody Map<String,String> body){
+        System.out.println(body.toString());
+        pService.savePerson(body);
+        return "ok";
+    }
+
+
 
 
 
