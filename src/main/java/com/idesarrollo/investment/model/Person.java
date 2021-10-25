@@ -1,7 +1,6 @@
 package com.idesarrollo.investment.model;
 
 
-
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
@@ -23,6 +22,7 @@ public class Person {
     private String cuil;
     private String address;
     private String phone;
+    private String sex;
     private LocalDate birthday;
 
     //CONSTRUCTOR
@@ -41,6 +41,10 @@ public class Person {
     public void setName(String n) {
         this.name = n;
     }
+
+    public String getSex() {return sex;}
+
+    public void setSex(String sex) {this.sex = sex;}
 
     //GETTER
     public String getName(){
@@ -105,7 +109,7 @@ public class Person {
                 ", cuil='" + cuil + '\'' +
                 ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
-                ", birthday=" + birthday +
+                ", birthday=" + birthday + ", sexo=" + sex +
                 '}';
     }
 

@@ -1,6 +1,5 @@
 package com.idesarrollo.investment.service;
 
-
 import com.idesarrollo.investment.model.Investor;
 import com.idesarrollo.investment.model.Person;
 import org.springframework.stereotype.Service;
