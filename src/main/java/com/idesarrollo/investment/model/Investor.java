@@ -13,8 +13,8 @@ public class Investor extends Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idInvestor;
 
+    private Long idInvestor;
     private Long amount;
     private String moneda;
     private String plazo;
