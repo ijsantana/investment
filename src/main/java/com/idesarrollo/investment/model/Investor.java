@@ -43,13 +43,9 @@ public class Investor extends Person {
         this.moneda = moneda;
     }
 
-    public String getPlazo() {
-        return plazo;
-    }
+    public String getPlazo() {return plazo;}
 
-    public void setPlazo(String plazo) {
-        this.plazo = plazo;
-    }
+    public void setPlazo(String plazo) {this.plazo = plazo;}
 
     @Override
     public String toString() {
