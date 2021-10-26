@@ -1,30 +1,33 @@
 package com.idesarrollo.investment.model;
 
-import org.springframework.data.annotation.Id;
-
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table
-public class Investor extends Person {
+public class Investor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    private Long idInvestor;
     private Long amount;
     private String moneda;
     private String plazo;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public Long getIdInvestor() {
-        return idInvestor;
+        return id;
     }
 
     public void setIdInvestor(Long idInvestor) {
-        this.idInvestor = idInvestor;
+        this.id = idInvestor;
     }
 
     public Long getAmount() {
@@ -50,7 +53,7 @@ public class Investor extends Person {
     @Override
     public String toString() {
         return "Investor{" +
-                "id=" + idInvestor +
+                "id=" + id +
                 ", amount=" + amount +
                 ", moneda='" + moneda + '\'' +
                 ", plazo='" + plazo + '\'' +
