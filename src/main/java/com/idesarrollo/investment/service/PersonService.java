@@ -18,9 +18,14 @@ public class PersonService {
     PersonRepository pRepository;
 
     public PersonDto findPerson(String dni){
-        Person persona = pRepository.findByDni(dni);
-        PersonDto dto = convertPersonToDto(persona);
-        return dto;
+        try {
+            Person persona = pRepository.findByDni(dni);
+            PersonDto dto = convertPersonToDto(persona);
+            return dto;
+        } catch(NullPointerException e) {
+            System.out.println("EL DNI ES NULO");
+            return null;
+        }
     }
 
     public PersonDto convertPersonToDto(Person person){
@@ -28,6 +33,13 @@ public class PersonService {
         pDto.setName(person.getName());
         pDto.setAddress(person.getAddress());
         pDto.setDni(person.getDni());
+
+        if(person.getPhone()==null || person.getPhone().isEmpty()){
+            pDto.setExistPhone(false);
+        } else {
+            pDto.setExistPhone(true);
+        }
+
         return pDto;
     }
 

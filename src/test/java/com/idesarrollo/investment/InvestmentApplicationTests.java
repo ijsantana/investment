@@ -31,4 +31,23 @@ class InvestmentApplicationTests {
 		System.out.println(list);
 	}
 
+	@Test
+	void manejoDeTryCatch(){
+
+		String nombre = null;
+		//Integer largo1 = nombre.length();
+		try {
+			//throw new RuntimeException("VOY A TIRAR UN ERROR");
+			//Integer largo = nombre.length();
+		} catch(NullPointerException e){
+			System.out.println("TIRO UN NULLPOINTEREXCEPTION: " + e.getMessage());
+		} catch(Exception e){
+			System.out.println("TIRO OTRA EXCEPCION DESCONOCIDA: " + e.getMessage());
+		} finally {
+			//OPCIONAL
+			//ALGO QUE QUIERO QUE HAGA SIEMPRE, TIRE O NO TIRE ERROR
+			System.out.println("TERMINO EL CODIGO");
+		}
+	}
+
 }
