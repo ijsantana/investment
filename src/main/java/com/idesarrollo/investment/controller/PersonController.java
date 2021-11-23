@@ -28,8 +28,6 @@ public class PersonController {
     }
 
 
-
-
     @GetMapping("/person/name/{name}")
     public String getPersonByName(@PathVariable("name") String name){
 
@@ -38,8 +36,6 @@ public class PersonController {
         return "persona: ";
     }
 
-<<<<<<< HEAD
-=======
     @PostMapping("/person/new")
     public String saveNewPerson(@RequestBody Map<String,String> body){
         System.out.println(body.toString());
@@ -52,12 +48,6 @@ public class PersonController {
         return pService.findAllPersons();
     }
 
-
-
-
-
-
->>>>>>> 826290eddc9595a2cfdd69a70ef00595f11dd601
 }
 
 

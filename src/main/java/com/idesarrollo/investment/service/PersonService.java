@@ -1,10 +1,6 @@
 package com.idesarrollo.investment.service;
 
-<<<<<<< HEAD
-=======
-
 import com.idesarrollo.investment.dtos.PersonDto;
->>>>>>> 826290eddc9595a2cfdd69a70ef00595f11dd601
 import com.idesarrollo.investment.model.Investor;
 import com.idesarrollo.investment.model.Person;
 import com.idesarrollo.investment.repository.PersonRepository;
