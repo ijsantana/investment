@@ -1,9 +1,6 @@
 package com.idesarrollo.investment.model;
 
-
-
 import com.sun.istack.NotNull;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -14,7 +11,6 @@ public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @NotNull
     private String name;
     @NotNull
@@ -26,6 +22,7 @@ public class Person {
     private LocalDate birthday;
 
     //CONSTRUCTOR
+
     public Person(){
         this.name = "";
         this.dni = "";
@@ -35,67 +32,38 @@ public class Person {
         this.name = name;
     }
 
+    //
 
+    public void setName(String n) {this.name = n;}
 
-    //SETTER
-    public void setName(String n) {
-        this.name = n;
-    }
+    public String getName(){return this.name;}
 
-    //GETTER
-    public String getName(){
-        return this.name;
-    }
+    public Long getId() {return id;}
 
-    public Long getId() {
-        return id;
-    }
+    public void setId(Long id) {this.id = id;}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public String getDni() {return dni;}
 
-    public String getDni() {
-        return dni;
-    }
+    public void setDni(String dni) {this.dni = dni;}
 
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
+    public String getCuil() {return cuil;}
 
-    public String getCuil() {
-        return cuil;
-    }
+    public void setCuil(String cuil) {this.cuil = cuil;}
 
-    public void setCuil(String cuil) {
-        this.cuil = cuil;
-    }
+    public String getAddress() {return address;}
 
-    public String getAddress() {
-        return address;
-    }
+    public void setAddress(String address) {this.address = address;}
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+    public String getPhone() {return phone;}
 
-    public String getPhone() {
-        return phone;
-    }
+    public void setPhone(String phone) {this.phone = phone;}
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+    public LocalDate getBirthday() {return birthday;}
 
-    public LocalDate getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(LocalDate birthday) {
-        this.birthday = birthday;
-    }
+    public void setBirthday(LocalDate birthday) {this.birthday = birthday;}
 
     //LE DA PRIORIDAD A ESTE METODO SOBRE EL toString() que viene por default.
+
     @Override
     public String toString() {
         return "Person{" +

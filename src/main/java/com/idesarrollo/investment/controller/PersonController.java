@@ -16,9 +16,9 @@ public class PersonController {
     //PersonService pService = new PersonService();
     //@ son beans.
     //Instanciar el objeto pService, Es lo mismo que la fila de arriba
+
     @Autowired
     PersonService pService;
-
 
     //@RequestMapping(value = "/person/{id}", method = RequestMethod.GET)
     @GetMapping("/person/{dni}")
@@ -26,7 +26,6 @@ public class PersonController {
         PersonDto persona = pService.findPerson(dni);
         return persona;
     }
-
 
 
 
@@ -50,11 +49,6 @@ public class PersonController {
     public List<Person> findAllPersons(){
         return pService.findAllPersons();
     }
-
-
-
-
-
 
 }
 

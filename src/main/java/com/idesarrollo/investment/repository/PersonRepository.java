@@ -8,6 +8,7 @@ import java.util.List;
 
 
 //HIBERNATE-> PARA MANEJO DE BBDD
+
 @Repository
 public interface PersonRepository extends CrudRepository<Person,Long> {
 
@@ -16,3 +17,4 @@ public interface PersonRepository extends CrudRepository<Person,Long> {
     Person findByDni(String dni);
 
 }
+
